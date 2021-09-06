@@ -2,7 +2,10 @@ const clock = document.querySelector("h2#clock");
 
 function getClock(){
     const date = new Date();
-    clock.innerText = (`${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`);
+    const hours = String(date.getHours()).padStart(2, "0"); // 적어도 2글자여야함, 아니면 앞(start)에 0을 추가한다.
+    const minutes = String(date.getMinutes()).padStart(2, "0");
+    const seconds = String(date.getSeconds()).padStart(2, "0");
+    clock.innerText = `${hours}:${minutes}:${seconds}`;
 }
 
 getClock();
