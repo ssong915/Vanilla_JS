@@ -9,9 +9,9 @@ const USERNAME_KEY = "username";
 function onLoginSubmit(event) {
   event.preventDefault(); //브라우저의 기본동작 막기
   loginForm.classList.add(HIDDEN_CLASSNAME);
-  const username = loginInput.value; // input에서 받은 username
-  localStorage.setItem(USERNAME_KEY,username); //localStorage에 저장
-  paintGreetings(username)
+  const usernameThatTheUserWrote = loginInput.value; // input에서 받은 username
+  localStorage.setItem(USERNAME_KEY,usernameThatTheUserWrote); //localStorage에 저장
+  paintGreetings(usernameThatTheUserWrote)
 }
 
 function paintGreetings(username) {
@@ -19,6 +19,7 @@ function paintGreetings(username) {
   //                       // string 안에 변수를 추가하고 싶다면 ${변수}로 추가
   greeting.classList.remove(HIDDEN_CLASSNAME);
 }
+
 const saveUsername = localStorage.getItem(USERNAME_KEY);
 
 if (saveUsername === null) {
