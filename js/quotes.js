@@ -15,8 +15,7 @@ const quotes = [
 const quote = document.querySelector("#quote span:first-child");
 const title = document.querySelector("#quote span:last-child");
 
-const length = quotes.length
-const todaysQuote = quotes[Math.round(Math.random()*length)];
+const todaysQuote = quotes[Math.round(Math.random() * quotes.length)];
 
 quote.innerText = todaysQuote.quote;
 title.innerText = todaysQuote.title;
